@@ -1,0 +1,28 @@
+{
+  "name": "contacts-with-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "contacts-with-testing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaycribas/contacts-with-testing.git"
+  },
+  "keywords": [
+    "try",
+    "catch",
+    "throw",
+    "testing"
+  ],
+  "author": "Jay Cribas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaycribas/contacts-with-testing/issues"
+  },
+  "homepage": "https://github.com/jaycribas/contacts-with-testing#readme",
+  "dependencies": {
+    "console.table": "^0.8.0"
+  }
+}

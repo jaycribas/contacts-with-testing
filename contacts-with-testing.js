@@ -11,7 +11,14 @@ const addContact = function(firstName, lastName, email) {
 }
 
 const addContacts = function(contactData) {
-  allContacts.push(...contactData)  //spread operator to combine arrays
+  contactData.forEach(function(person){
+    for (var prop in person){
+      var firstName = person.first_name
+      var lastName = person.last_name
+      var email = person.email
+    }
+    addContact(firstName, lastName, email)
+  })
 }
 
 const printContacts = function(contacts) {

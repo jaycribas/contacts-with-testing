@@ -10,11 +10,14 @@ const addContact = function(firstName, lastName, email) {
     email: email
   }
 
-  if(typeof firstName == 'string' &&
-    typeof lastName == 'string' &&
-    typeof email == 'string'){
-      allContacts.push(contact)
-  } else {
+  try{
+    console.assert(
+      typeof firstName == 'string' &&
+      typeof lastName == 'string' &&
+      typeof email == 'string')
+    allContacts.push(contact)
+  }
+  catch(e){
     invalidContacts.push(contact)
   }
 }
@@ -48,7 +51,15 @@ const printContacts = function(contacts) {
   }
 
   console.table('All Contacts:', fullNameSorted)
-  console.log(`Could not import ${invalidContacts.length} contacts.\n`, invalidContacts)
+  console.log(`Could not import ${invalidContacts.length} contacts.`)
+
+  try {
+    for(let i = 0; i < invalidContacts.length; i++){
+      console.log( 'First: ' + invalidContacts[i].first_name + ', Last: ' + invalidContacts[i].last_name + ', Email: ' + invalidContacts[i].email )
+    }
+  } catch(e) {
+    console.log("e.message (╯°□°）╯︵ ┻━┻", e.message)
+  }
 }
 
 

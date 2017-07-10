@@ -1,13 +1,22 @@
 require('console.table')
 
 let allContacts = []
+let invalidContacts = []
 
 const addContact = function(firstName, lastName, email) {
-  let contact = {}
-  contact.first_name = firstName
-  contact.last_name = lastName
-  contact.email = email
-  allContacts.push(contact)
+  let contact = {
+    first_name: firstName,
+    last_name: lastName,
+    email: email
+  }
+
+  if(typeof firstName == 'string' &&
+    typeof lastName == 'string' &&
+    typeof email == 'string'){
+      allContacts.push(contact)
+  } else {
+    invalidContacts.push(contact)
+  }
 }
 
 const addContacts = function(contactData) {
@@ -39,7 +48,10 @@ const printContacts = function(contacts) {
   }
 
   console.table('All Contacts:', fullNameSorted)
+  console.log(`Could not import ${invalidContacts.length} contacts.\n`, invalidContacts)
 }
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////
